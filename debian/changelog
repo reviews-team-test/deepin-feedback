@@ -1,3 +1,9 @@
+deepin-feedback (5.1.2) unstable; urgency=medium
+
+  * add feedback desktop.
+
+ -- TagBuilder <lichenggang@uniontech.com>  Tue, 03 Aug 2021 11:45:24 +0800
+
 deepin-feedback (1.0.3) stable; urgency=low
 
   * Autobuild Tag 1.0.3 
