@@ -41,8 +41,6 @@ install:
 	install -m0755 deepin-feedback ${DESTDIR}${PREFIX}/bin/
 	install -dm0755 ${DESTDIR}${PREFIX}/share/applications
 	install -m0755 build/deepin-feedback.desktop ${DESTDIR}${PREFIX}/share/applications/
-	install -dm0755 ${DESTDIR}/etc/skel/Desktop/
-	install -m0755 build/deepin-feedback.desktop ${DESTDIR}/etc/skel/Desktop/
 	cp -rf misc/icons ${DESTDIR}${PREFIX}/share/
 	install -dm0755 ${DESTDIR}${PREFIX}/share/polkit-1/actions/
 	install -m0644 build/com.deepin.deepin-feedback.policy ${DESTDIR}${PREFIX}/share/polkit-1/actions/
