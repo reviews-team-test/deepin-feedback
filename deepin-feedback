@@ -1,6 +1,7 @@
 #!/bin/bash -e
+export TEXTDOMAIN=deepin-feedback
 # 应用名
-app_name=$(gettext "Deepin User Feedback")
+app_name="Deepin User Feedback"
 # 应用图标
 app_icon="deepin-feedback"
 # 授权前提示
@@ -25,9 +26,9 @@ notify-send -a "$app_name" -i $app_icon -t 2000 "$approvePrompt"
 # 切换用户的命令，用于在提权后给用户显示提示
 switchUserCommand="sudo -u \#$UID DISPLAY=$DISPLAY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS"
 # 在提权后给用户发通知，提示开始采集日志
-notifyCommand="notify-send1 -a \"$app_name\" -i $app_icon -t 10000 \"$startPrompt\" \"$progressPrompt\""
+notifyCommand="notify-send -a \"$app_name\" -i $app_icon -t 10000 \"$startPrompt\" \"$progressPrompt\""
 # 调用deepin-feedback-cli采集日志，由于网站上传文件限制大小，按100M切片。ps：日志一般不会大于100M
-cliCommand="deepin-feedback-cl1i -m 104857600 -o ${output_path}"
+cliCommand="deepin-feedback-cli -m 104857600 -o ${output_path}"
 # 提权并执行上面的三个命令
 pkexec bash -c "$switchUserCommand $notifyCommand && $cliCommand" &&
 # 日志采集完成后，显示一个成功提示
