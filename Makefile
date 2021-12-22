@@ -28,9 +28,7 @@ ts:
 	deepin-desktop-ts-convert desktop2ts misc/deepin-feedback.desktop.in misc/ts/deepin-feedback.desktop
 
 pot:
-	xgettext -LShell --keyword=gettext -o misc/po/deepin-feedback-cli.pot cli/deepin-feedback-cli.sh
-	# set charset to UTF-8
-	sed -i 's/CHARSET/UTF-8/'  misc/po/deepin-feedback-cli.pot
+	xgettext -LShell --from-code UTF-8 --keyword=gettext -o misc/po/deepin-feedback-cli.pot cli/deepin-feedback-cli.sh deepin-feedback
 
 install:
 	install -dm0755 ${DESTDIR}${PREFIX}/bin/
