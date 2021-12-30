@@ -5,6 +5,7 @@ include /usr/share/dpkg/default.mk
 
 export QT_SELECT = qt5
 export GOPATH := /usr/share/gocode
+export GOCACHE=/tmp/gocache
 
 %:
 	dh $@
